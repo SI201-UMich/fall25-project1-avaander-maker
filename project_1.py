@@ -92,6 +92,7 @@ def percentage_wheat_high_yield_south(data):
         return 0
     high_yield_count = sum(1 for row in filtered if float(row['Yield_tons_per_hectare']) > 3)
     return (high_yield_count / len(filtered)) * 100
+
 # Luther's calculations
 def avg_rainfall_east_high_yield(data):
     """
@@ -127,3 +128,24 @@ def most_frequent_crop_high_yield_rain(data):
 
     most_common_crop = max(freq, key=freq.get)
     return most_common_crop
+
+def write_results_to_txt(results, filename="agriculture_results.txt"):
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(results)
+    print(f"Results written to {filename}")
+
+def main():
+    csv_filename = "crop_yield.csv"
+    print("Reading data from crop_yield.csv...")
+    data = read_csv(csv_filename)
+
+    if not data:
+        print(" No data loaded. Please check your CSV file.")
+        return
+
+    kamila_avg_yield = avg_yield_maize_north_temp_range(data)
+    kamila_percent_maize = percentage_maize_east_high_rainfall(data)
+    ava_avg_yield_west = avg_yield_temp_range_west(data)
+    ava_percent_wheat_south = percentage_wheat_high_yield_south(data)
+    luther_avg_rainfall = avg_rainfall_east_high_yield(data)
+    luther_most_common_crop = most_frequent_crop_high_yield_rain(data)
