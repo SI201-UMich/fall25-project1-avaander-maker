@@ -1,7 +1,7 @@
 # Name: Ava Anderson
 # Student ID: 4721 2454 
 # Email: avaander@umich.ed
-# Collaborators: Ava Anderson, Luther Hoy, and generative AI (ChatGPT, DeepAI)
+# Collaborators: Ava Anderson, Kamila Podsiadlo, Luther Hoy, and generative AI (ChatGPT, DeepAI)
 #
 # Function Authorship:
 # Kamila: avg_yield_maize_north_temp_range, percentage_maize_east_high_rainfall
@@ -129,11 +129,6 @@ def most_frequent_crop_high_yield_rain(data):
     most_common_crop = max(freq, key=freq.get)
     return most_common_crop
 
-def write_results_to_txt(results, filename="agriculture_results.txt"):
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(results)
-    print(f"Results written to {filename}")
-
 def main():
     csv_filename = "crop_yield.csv"
     print("Reading data from crop_yield.csv...")
@@ -161,7 +156,6 @@ def main():
         f"6. Most frequent crop where rain > 800mm and yield >3.5 tons/hectare): {luther_most_common_crop}\n"
     )
     print("\n" + results)
-    write_results_to_txt(results)
 
 mock_data = [
     {'Temperature_Celsius': '16', 'Yield_tons_per_hectare': '3.2', 'Crop': 'Maize', 'Region': 'North', 'Rainfall_mm': '720'},
@@ -227,3 +221,5 @@ if __name__ == "__main__":
     print("\nEdge 4 - Single matching row:")
     print("Percentage Maize East:", percentage_maize_east_high_rainfall(single_match_data))
     print("Avg rainfall East high yield:", avg_rainfall_east_high_yield(single_match_data))
+
+    #how do I push the CSV

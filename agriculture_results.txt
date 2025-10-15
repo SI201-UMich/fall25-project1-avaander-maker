@@ -1,0 +1,8 @@
+AGRICULTURE CROP YIELD ANALYSIS RESULTS
+----------------------------------------
+1. Avg yield for Maize in North (15–25°C): 4.50 tons/hectare
+2. % of Maize crops in East with rainfall >700mm: 16.57%
+3. Avg yield in West (15–25°C): 4.49 tons/hectare
+4. % of Wheat in North grown <15°C: 0.00%
+5. Avg rainfall in South with yield >3.5: 641.74 mm
+6. Most common crop in East with rainfall >800mm: Cotton
